@@ -1,0 +1,21 @@
+from math import ceil
+def bancoAmigo ( nuip : int , depositos : []) -> tuple :
+    montoFinal = 0
+    interesGenerado = 0
+    ahorroTotal = 0
+    for depositomes in depositos:
+        ahorroTotal = ahorroTotal + depositomes
+        montoFinal = montoFinal + depositomes
+        if depositomes >= 300000:
+            interesmes = montoFinal * (5/100)
+            montoFinal = montoFinal + interesmes
+            interesGenerado = interesGenerado + interesmes
+    if montoFinal > 3600000:
+        rendimientoadicional = montoFinal * (12/100)
+        montoFinal = montoFinal + rendimientoadicional
+        interesGenerado = interesGenerado + rendimientoadicional
+    else:
+        rendimientoadicional = montoFinal * (7/100)
+        montoFinal = montoFinal + rendimientoadicional
+        interesGenerado = interesGenerado + rendimientoadicional
+    return nuip , ahorroTotal , ceil ( interesGenerado ) , ceil (montoFinal )
